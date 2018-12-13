@@ -23,9 +23,9 @@ public class Guru99TestHomePage
 		
 	}
 	
-	@Test (priority =2)
-	public void NewAccntCreation() throws InterruptedException {
-		driver.get("http://demo.guru99.com/V4/index.php");
-		Homepage.CreateNwAcnt();
-	}
+//	@Test (priority =2)
+//	public void NewAccntCreation() throws InterruptedException {
+//		driver.get("http://demo.guru99.com/V4/index.php");
+//		Homepage.CreateNwAcnt();
+//	}
 }

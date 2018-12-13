@@ -51,21 +51,21 @@ public class Guru99LoginPage
 		LoginBtn.click();
 		WelcomePage.isDisplayed();
 		Thread.sleep(3000);
-		LogoutfromGuru99.click();
-		Thread.sleep(4000);
-		 Alert alert = driver.switchTo().alert();
-		alert.accept();
-		Thread.sleep(4000);
+//		LogoutfromGuru99.click();
+//		Thread.sleep(4000);
+//		 Alert alert = driver.switchTo().alert();
+//		alert.accept();
+//		Thread.sleep(4000);
 		
 	}
 	
-	public void CreateNwAcnt() throws InterruptedException {
-		GenerateNwAct.click();
-		NewEml.sendKeys("user@votercircle.in");
-		SubmitBtn.click();
-		GetTitle.isDisplayed();
-		Thread.sleep(3000);
-	}
+//	public void CreateNwAcnt() throws InterruptedException {
+//		GenerateNwAct.click();
+//		NewEml.sendKeys("user@votercircle.in");
+//		SubmitBtn.click();
+//		GetTitle.isDisplayed();
+//		Thread.sleep(3000);
+//	}
 }
 
 
