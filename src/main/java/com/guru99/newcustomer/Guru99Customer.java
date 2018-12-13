@@ -33,6 +33,26 @@ public class Guru99Customer
 	@FindBy(xpath ="//input[@name=\"city\"]")
 	WebElement City;
 	
+	@FindBy(xpath ="//input[@name=\"state\"]")
+	WebElement State;
+	
+	@FindBy(xpath ="//input[@name=\"pinno\"]")
+	WebElement PinNmber;
+	
+	@FindBy(xpath ="//input[@name=\"telephoneno\"]")
+	WebElement PhneNmber;
+	
+	@FindBy(xpath ="//input[@name=\"emailid\"]")
+	WebElement Eml;
+	
+	@FindBy(xpath ="//input[@name=\"password\"]")
+	WebElement Pwd;
+	
+	@FindBy(xpath ="//input[@value=\"Submit\"]")
+	WebElement SubmtBtn;
+	
+	@FindBy(xpath ="(//a[@href=\"Managerhomepage.php\"])[2]")
+	WebElement AftrAccntCrtn;
 	
 	public Guru99Customer(WebDriver driver) {
 		this.driver = driver;
@@ -43,11 +63,21 @@ public class Guru99Customer
 	public void Creation_of_new_customer() throws Exception{
 		NewCustmer.click();
 		Thread.sleep(5000);
-		CustmerName.sendKeys("Johnson");
+		CustmerName.sendKeys("Simmmya");
 		Genderfmle.click();
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-		DOB.sendKeys("01-10-2017");
-		Address.sendKeys("Please create myaccount");
+		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+		DOB.sendKeys("24-11-2002");
+		Address.sendKeys("Dad mm myaccount");
+		City.sendKeys("Washington AC");
+		State.sendKeys("USA");
+		PinNmber.sendKeys("784432");
+		PhneNmber.sendKeys("9898838388");
+		Eml.sendKeys("Samprr@votercircle.in");
+		Pwd.sendKeys("V3d1122");
+		SubmtBtn.click();
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+//		AftrAccntCrtn.click();
+		
 		
 		
 	}
