@@ -1,38 +1,50 @@
 package com.guru99.editcustomer;
 
-import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
+import com.guru99.newcustomer.Guru99Customer;
 
-public class Guru99EditCustomer 
+public class Guru99EditCustomer extends Guru99Customer
 
 {
 	WebDriver driver;
 	
-	@FindBy(xpath ="(//tr/td)[6]")
-	WebElement CustomerId;
-	
 	@FindBy(xpath = "//a[@href=\"EditCustomer.php\"]")
 	WebElement EdtCustmer;
+	
+	@FindBy(xpath ="//input[@name=\"cusid\"]")
+	WebElement CustomerId;
 	
 	@FindBy(css ="input[name='AccSubmit']")
 	WebElement SbmtBtn;
 	
 	public Guru99EditCustomer(WebDriver driver) {
-		this.driver = driver;
-		PageFactory.initElements(driver, this);
+		super(driver);
 	}
 	
-	public void Edit_Customer_Using_Id() throws InterruptedException {
-		String value = CustomerId.getText();
-		Thread.sleep(4000);
-		EdtCustmer.click();
-		Thread.sleep(4000);
-		EdtCustmer.sendKeys(value);
-		SbmtBtn.click();
-		driver.manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);
+	public String Get_Created_Custmer_Id() {
+		String CustId =  GetCustomerId.getText();
+		return CustId;
 	}
+	
+	public void Edit_Customer_Details() {
+		EdtCustmer.click();
+	}
+	
+	public void Enter_Customer_Id(String CustId ) {
+		
+		CustomerId.sendKeys(CustId);
+	}
+	
+	public void Click_On_SubmitBtn() {
+		SbmtBtn.click();
+	}
+	
+	public void Entering_The_CustmerId_And_Editng_Details(String CustId) {
+		Edit_Customer_Details();
+		Enter_Customer_Id(CustId);
+		Click_On_SubmitBtn();
+	}
+	
 }

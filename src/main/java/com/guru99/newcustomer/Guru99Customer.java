@@ -1,7 +1,5 @@
 package com.guru99.newcustomer;
 
-import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -50,6 +48,10 @@ public class Guru99Customer extends Guru99HomePage
 	@FindBy(xpath ="//input[@value=\"Submit\"]")
 	WebElement SubmtBtn;
 	
+	@FindBy(xpath="//tbody[1]/tr[4]/td[2]")
+	protected
+	WebElement GetCustomerId;
+	
 	@FindBy(xpath ="(//a[@href=\"Managerhomepage.php\"])[2]")
 	WebElement AftrAccntCrtn;
 	
@@ -73,7 +75,7 @@ public class Guru99Customer extends Guru99HomePage
 		Email.sendKeys(Eml);
 		Pwd.sendKeys(pwdd);
 		SubmtBtn.click();
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+//		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 //		AftrAccntCrtn.click();
 		
 		
