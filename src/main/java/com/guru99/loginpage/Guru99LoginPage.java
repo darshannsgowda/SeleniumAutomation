@@ -1,6 +1,5 @@
-package come.guru99.homepage;
+package com.guru99.loginpage;
 
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -30,42 +29,38 @@ public class Guru99LoginPage
 	@FindBy(xpath ="//a[@href = \"http://demo.guru99.com/\"]")
 	WebElement GenerateNwAct;
 	
-	@FindBy(xpath ="//input[@name=\"emailid\"]")
-	WebElement NewEml;
-	
-	@FindBy(xpath = "//input[@value=\"Submit\"]")
-	WebElement SubmitBtn;
-	
-	@FindBy(xpath ="(//tr/td[@class=\"accpage\"])[1]")
-	WebElement GetTitle;
 	public Guru99LoginPage(WebDriver driver) 
 	{
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
-		
 	}
 	
-	public void LoginToAccount() throws InterruptedException {
-		UserId.sendKeys("mngr167859");
-		Password.sendKeys("mEdameb");
+	public void Enter_UserId(String userid) {
+		UserId.sendKeys(userid);
+	}
+	
+	public void Enter_Password(String pas) {
+		Password.sendKeys(pas);
+	}
+	
+	public void Click_On_Login_Button() {
 		LoginBtn.click();
+	}
+	
+	public void WelocomePage_IsDisplayed() {
 		WelcomePage.isDisplayed();
-		Thread.sleep(3000);
-//		LogoutfromGuru99.click();
-//		Thread.sleep(4000);
-//		 Alert alert = driver.switchTo().alert();
-//		alert.accept();
-//		Thread.sleep(4000);
+	}
+	public void Now_LoginToAccount(String userid, String pas) {
+		
+		Enter_UserId(userid);
+		Enter_Password(pas);
+		Click_On_Login_Button();
+		WelocomePage_IsDisplayed();
+		
+		
 		
 	}
 	
-//	public void CreateNwAcnt() throws InterruptedException {
-//		GenerateNwAct.click();
-//		NewEml.sendKeys("user@votercircle.in");
-//		SubmitBtn.click();
-//		GetTitle.isDisplayed();
-//		Thread.sleep(3000);
-//	}
 }
 
 

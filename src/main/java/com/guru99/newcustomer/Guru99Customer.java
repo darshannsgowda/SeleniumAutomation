@@ -5,14 +5,13 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
+import come.guru99.homepage.Guru99HomePage;
 
-public class Guru99Customer
+public class Guru99Customer extends Guru99HomePage
 
 {
 	WebDriver driver;
 	
-
 	
 	@FindBy(xpath = "//a[@href =\"addcustomerpage.php\"]")
 	WebElement NewCustmer;
@@ -43,7 +42,7 @@ public class Guru99Customer
 	WebElement PhneNmber;
 	
 	@FindBy(xpath ="//input[@name=\"emailid\"]")
-	WebElement Eml;
+	WebElement Email;
 	
 	@FindBy(xpath ="//input[@name=\"password\"]")
 	WebElement Pwd;
@@ -55,25 +54,24 @@ public class Guru99Customer
 	WebElement AftrAccntCrtn;
 	
 	public Guru99Customer(WebDriver driver) {
-		this.driver = driver;
-		PageFactory.initElements(driver, this);
+		super(driver);
 		
 	}
 
-	public void Creation_of_new_customer() throws Exception{
+	public void Creation_of_new_customer(String name, String date, String address, String city, String state, String pin, String phone, String Eml, String pwdd) throws Exception{
 		NewCustmer.click();
 		Thread.sleep(5000);
-		CustmerName.sendKeys("Simmmya");
+		CustmerName.sendKeys(name);
 		Genderfmle.click();
-		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-		DOB.sendKeys("24-11-2002");
-		Address.sendKeys("Dad mm myaccount");
-		City.sendKeys("Washington AC");
-		State.sendKeys("USA");
-		PinNmber.sendKeys("784432");
-		PhneNmber.sendKeys("9898838388");
-		Eml.sendKeys("Samprr@votercircle.in");
-		Pwd.sendKeys("V3d1122");
+		Thread.sleep(4000);
+		DOB.sendKeys(date);
+		Address.sendKeys(address);
+		City.sendKeys(city);
+		State.sendKeys(state);
+		PinNmber.sendKeys(pin);
+		PhneNmber.sendKeys(phone);
+		Email.sendKeys(Eml);
+		Pwd.sendKeys(pwdd);
 		SubmtBtn.click();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 //		AftrAccntCrtn.click();
