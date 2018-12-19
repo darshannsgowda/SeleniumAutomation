@@ -28,30 +28,32 @@ public class Guru99TestLoginPage
 		driver.get("http://demo.guru99.com/V4/");
 		Login.Now_LoginToAccount(Usrname,Pwd);
 		customer.Creation_of_new_customer(Custmrname,Dob,addres,city, state,pin, phone, eml, pass);
+		
 	
 	}
 	 @DataProvider(name="createCustomer")
      public static Object[][] getDataFromCreateCustomer(){
          return new Object[][] {
             
-             { "mngr167859","mEdameb","Babrsharee","09-11-1998","Thanks for coming here", "California", "USA", "928392", "9887327382", "baber23r@votercircle.in", "Tet123" }
+             { "mngr167859","mEdameb","Babrsharee","09-11-1998","Thanks for coming here", "California", "USA", "928392", "9887327382", "baber23r@votercircle.in", "Tet123" },
+             {"Bindshree", "08-11-1997","Thanks mam for the Support","Californ","USA","930333","9837263563","hh@votercircle.in","Test1234"}
          };  
 	  }
 	  
-	
-	@Test(priority = 2, dataProvider="editCustomer")
-	public void Edition_Customer_And_Save(String address, String city,String state, String pin, String phone, String Eml) throws InterruptedException {
-		EditCustmer = new Guru99EditCustomer(driver);
-		String Custid = EditCustmer.Get_Created_Custmer_Id();
-		EditCustmer.Entering_The_CustmerId_And_Editng_Details(Custid,address, city, state, pin, phone, Eml);	
-	}
-	 
-	  @DataProvider(name="editCustomer")
-	  public static Object[][] getDataFromEditCustomer(){
-		  return new Object[][] {
-			  {"Thanks for coming here well", "Califora", "SSA", "928892", "9887329982", "prakash11@votercircle.in"}
-		  };
-	  }
+//	
+//	@Test(priority = 2, dataProvider="editCustomer")
+//	public void Edition_Customer_And_Save(String address, String city,String state, String pin, String phone, String Eml) throws InterruptedException {
+//		EditCustmer = new Guru99EditCustomer(driver);
+//		String Custid = EditCustmer.Get_Created_Custmer_Id();
+//		EditCustmer.Entering_The_CustmerId_And_Editng_Details(Custid,address, city, state, pin, phone, Eml);	
+//	}
+//	 
+//	  @DataProvider(name="editCustomer")
+//	  public static Object[][] getDataFromEditCustomer(){
+//		  return new Object[][] {
+//			  {"Thanks for coming here well", "Califora", "SSA", "928892", "9887329982", "prakash11@votercircle.in"}
+//		  };
+//	  }
 	  
 	 
 	  

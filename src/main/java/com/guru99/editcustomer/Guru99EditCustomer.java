@@ -24,7 +24,7 @@ public class Guru99EditCustomer extends Guru99Customer
 	}
 	
 	public String Get_Created_Custmer_Id() {
-		String CustId =  GetCustomerId.getText();
+		String CustId =  GetCustomerIdText.getText();
 		return CustId;
 	}
 	

@@ -12,49 +12,50 @@ public class Guru99HomePage extends BaseClass
 	protected WebDriver driver;
 	
 	@FindBy(tagName = "marquee")
-	WebElement WelcomePage ;
+	WebElement WelcomePageMenuopt ;
 	
 	@FindBy(xpath ="//a[@href=\"addcustomerpage.php\"]")
-	WebElement NewCustomer;
+	WebElement NewCustomerMenuopt;
 	
 	@FindBy(xpath = "//a[@href=\"EditCustomer.php\"]")
-	WebElement EditCustomer;
+	public
+	WebElement EditCustomerMenuopt;
 	
 	@FindBy(xpath ="//a[@href=\"DeleteCustomerInput.php\"]")
-	WebElement DeleteCustomer;
+	WebElement DeleteCustomerMenuopt;
 	
 	@FindBy(xpath ="//a[@href=\"addAccount.php\"]")
-	WebElement NewAccount;
+	WebElement NewAccountMenuopt;
 	
 	@FindBy(xpath ="//a[@href=\"editAccount.php\"]")
-	WebElement EditAccount;
+	WebElement EditAccountMenuopt;
 	
 	@FindBy(xpath ="//a[@href=\"deleteAccountInput.php\"]")
-	WebElement DeleteAccount;
+	WebElement DeleteAccountMenuopt;
 	
 	@FindBy(xpath="//a[@href=\"DepositInput.php\"]")
-	WebElement Deposit;
+	WebElement DepositMenuopt;
 	
 	@FindBy(xpath = "//a[@href=\"WithdrawalInput.php\"]")
-	WebElement WithDrawl;
+	WebElement WithDrawlMenuopt;
 	
 	@FindBy(xpath ="//a[@href=\"FundTransInput.php\"]")
-	WebElement FundTransfer;
+	WebElement FundTransferMenuopt;
 	
 	@FindBy(xpath ="//a[@href=\"PasswordInput.php\"]")
-	WebElement ChangePassword;
+	WebElement ChangePasswordMenuopt;
 	
 	@FindBy(xpath = "//a[@href=\"BalEnqInput.php\"]")
-	WebElement BalEnquiry;
+	WebElement BalEnquiryMenuopt;
 	
 	@FindBy(xpath ="//a[@href=\"MiniStatementInput.php\"]")
-	WebElement MiniStatmnt;
+	WebElement MiniStatmntMenuopt;
 	
 	@FindBy(xpath ="//a[@href=\"CustomisedStatementInput.php\"]")
-	WebElement CustomStatmnt;
+	WebElement CustomStatmntMenuopt;
 	
 	@FindBy(xpath ="//a[@href=\"Logout.php\"]")
-	WebElement LogOut;
+	WebElement LogOutMenuopt;
 	
 	public Guru99HomePage(WebDriver driver) {
 		this.driver = driver;
@@ -62,62 +63,62 @@ public class Guru99HomePage extends BaseClass
 	}
 	
 	public void Guru99_Welcome_Page_Title() {
-		WelcomePage.isDisplayed();
+		WelcomePageMenuopt.isDisplayed();
 	}
 	
 	public void Creation_of_New_Customer() {
-		NewCustomer.click();
+		NewCustomerMenuopt.click();
 	}
 	
 	public void Edition_of_Customer_Details() {
-		EditCustomer.click();
+		EditCustomerMenuopt.click();
 	}
 	
 	public void Deletion_of_Customer() {
-		DeleteCustomer.click();
+		DeleteCustomerMenuopt.click();
 	}
 	
 	public void Creation_of_NewAccount() {
-		NewAccount.click();
+		NewAccountMenuopt.click();
 	}
 	
 	public void Edition_of_Account() {
-		EditAccount.click();
+		EditAccountMenuopt.click();
 	}
 	
 	public void Deletion_of_Account() {
-		DeleteAccount.click();
+		DeleteAccountMenuopt.click();
 	}
 	
 	public void Deposit() {
-		Deposit.click();
+		DepositMenuopt.click();
 	}
 	
 	public void WithDraw() {
-		WithDrawl.click();
+		WithDrawlMenuopt.click();
 	}
 	
 	public void Fund_Transfer() {
-		FundTransfer.click();
+		FundTransferMenuopt.click();
 	}
 	
 	public void Change_Password() {
-		ChangePassword.click();
+		ChangePasswordMenuopt.click();
 	}
 	
 	public void Bal_Enquiry() {
-		BalEnquiry.click();
+		BalEnquiryMenuopt.click();
 	}
 	
 	public void Mini_StateMent() {
-		MiniStatmnt.click();
+		MiniStatmntMenuopt.click();
 	}
 	
 	public void Custom_Statemnt() {
-		CustomStatmnt.click();
+		CustomStatmntMenuopt.click();
 	}
 	
 	public void Logout_From_HomePage() {
-		LogOut.click();
+		LogOutMenuopt.click();
 	}
 }
