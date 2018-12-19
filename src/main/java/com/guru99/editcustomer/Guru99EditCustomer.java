@@ -41,10 +41,18 @@ public class Guru99EditCustomer extends Guru99Customer
 		SbmtBtn.click();
 	}
 	
-	public void Entering_The_CustmerId_And_Editng_Details(String CustId) {
+	public void Entering_The_CustmerId_And_Editng_Details(String CustId, String address, String city,String state, String pin, String phone, String Eml ) {
 		Edit_Customer_Details();
 		Enter_Customer_Id(CustId);
 		Click_On_SubmitBtn();
+		Enter_Address(address);
+		Enter_City(city);
+		Enter_state(state);
+		Enter_PinNumber(pin);
+		Enter_Phonenumber(phone);
+		Enter_Email(Eml);
+		Click_on_SubmitBtn();
 	}
+	
 	
 }

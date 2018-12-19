@@ -5,9 +5,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class Guru99HomePage 
+import com.guru99.base.BaseClass;
+
+public class Guru99HomePage extends BaseClass
 {
-	WebDriver driver;
+	protected WebDriver driver;
 	
 	@FindBy(tagName = "marquee")
 	WebElement WelcomePage ;
