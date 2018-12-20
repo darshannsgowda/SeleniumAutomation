@@ -1,12 +1,12 @@
-package com.guru99.newcustomer;
+package com.guru99.customer;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import come.guru99.homepage.Guru99HomePage;
+import come.guru99.managerhomepage.Guru99ManagerHomePage;
 
-public class Guru99Customer extends Guru99HomePage
+public class Guru99Customer extends Guru99ManagerHomePage
 
 {
 //	WebDriver driver;
@@ -47,7 +47,10 @@ public class Guru99Customer extends Guru99HomePage
 	WebElement Pwdfield;
 	
 	@FindBy(xpath ="//input[@value=\"Submit\"]")
-	WebElement SubmtBtn;
+	WebElement CreateCustomerSubmtBtn;
+	
+	@FindBy(xpath ="//p[contains(text(),'Customer Registered Successfully!!!')]")
+	WebElement CustomerSuccessfullTitle;
 	
 	@FindBy(xpath="//tbody[1]/tr[4]/td[2]")
 	protected
@@ -58,6 +61,12 @@ public class Guru99Customer extends Guru99HomePage
 	
 	@FindBy(xpath ="//p[contains(text(),'Add New Customer')]")
 	WebElement createNewCustomerTitle;
+	
+	@FindBy(xpath = "//input[@name=\"cusid\"]")
+	WebElement EditCustomeridField;
+	
+	@FindBy(xpath="//input[@type=\"submit\"]")
+	WebElement EditCustomerSubmitBtn;
 	
 	public Guru99Customer(WebDriver driver) {
 		super(driver);
@@ -115,15 +124,30 @@ public class Guru99Customer extends Guru99HomePage
 		Pwdfield.sendKeys(pwdd);
 	}
 	
-	public void Click_on_SubmitBtn(){
-		SubmtBtn.click();
+	public void Click_on_CreateCustomer_SubmitBtn(){
+		CreateCustomerSubmtBtn.click();
 	}
+	
+	public String Get_Created_Custmer_Id() {
+		String CustId =  GetCustomerIdText.getText();
+		return CustId;
+	}
+	public void created_Customerid_in_EditCustomerField(String CustId) {
+		EditCustomeridField.sendKeys(CustId);
+	}
+	
+	public void click_On_EditCustomer_SubmitBtn() {
+		EditCustomerSubmitBtn.click();
+	}
+	
+ 
+	
 	public void Creation_of_new_customer(String name, String date, String address, String city, String state, String pin, String phone, String Eml, String pwdd) throws Exception{
 		NewCustmer.click();
-		ExpliwaitUntilElementToBeClickable(driver, 2000, createNewCustomerTitle);
+		ExpliwaitUntilElementToBeClickable(driver, 10000, createNewCustomerTitle);
 		CustmerNamefield.sendKeys(name);
 		Genderfmleradiobtn.click();
-		Thread.sleep(4000);
+		Thread.sleep(2000);
 		Dobfield.sendKeys(date);
 		Addressfield.sendKeys(address);
 		Cityfield.sendKeys(city);
@@ -132,10 +156,25 @@ public class Guru99Customer extends Guru99HomePage
 		PhneNmberfield.sendKeys(phone);
 		Emailfield.sendKeys(Eml);
 		Pwdfield.sendKeys(pwdd);
-		SubmtBtn.click();
-		NewCustmer.click();
+		CreateCustomerSubmtBtn.click();
+		ExpliwaitUntilElementToBeClickable(driver, 5000,createNewCustomerTitle );
 
-		
-		
+	}
+	
+	
+	public void edition_Of_CreatedCustomer_Details(String CustId, String address, String city, String state, String pin, String phone, String Eml) {
+	
+		Edition_of_Customer_Details();
+		Get_Created_Custmer_Id();
+		created_Customerid_in_EditCustomerField(CustId);
+		click_On_EditCustomer_SubmitBtn();
+		ExpliwaitUntilElementToBeClickable(driver, 3000, EditCustomerSubmitBtn);
+		Enter_Address(address);
+		Enter_City(city);
+		Enter_state(state);
+		Enter_PinNumber(pin);
+		Enter_Phonenumber(phone);
+		Enter_Email(Eml);
+		click_On_EditCustomer_SubmitBtn();
 	}
 }

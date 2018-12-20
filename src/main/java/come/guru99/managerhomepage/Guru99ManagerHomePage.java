@@ -1,4 +1,4 @@
-package come.guru99.homepage;
+package come.guru99.managerhomepage;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.guru99.base.BaseClass;
 
-public class Guru99HomePage extends BaseClass
+public class Guru99ManagerHomePage extends BaseClass
 {
 	protected WebDriver driver;
 	
@@ -57,7 +57,7 @@ public class Guru99HomePage extends BaseClass
 	@FindBy(xpath ="//a[@href=\"Logout.php\"]")
 	WebElement LogOutMenuopt;
 	
-	public Guru99HomePage(WebDriver driver) {
+	public Guru99ManagerHomePage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
