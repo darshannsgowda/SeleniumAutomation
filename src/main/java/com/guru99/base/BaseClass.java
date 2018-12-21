@@ -1,5 +1,6 @@
 package com.guru99.base;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -12,11 +13,10 @@ public class BaseClass {
 		new WebDriverWait(driver, time).until(ExpectedConditions.elementToBeClickable(element));
 	}
 
-//	public void ExpliwaitUntilTextToBePresentInElement(WebDriver driver, long time, WebElement element) {
-//		new WebDriverWait(driver, time).until(ExpectedConditions.textToBePresentInElement(element, null));
-//	}
-//	
+	public void ExpliwaitUntilVisibilityofElementLocated(WebDriver driver, long time, WebElement element) {
+
+		new WebDriverWait(driver, time).until(ExpectedConditions.invisibilityOfElementLocated((By) element));
 	
-	
+	}
 	
 }

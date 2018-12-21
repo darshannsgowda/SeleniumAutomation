@@ -1,4 +1,4 @@
-package com.guru99.newcustompage;
+package com.guru99.custompage;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 import com.guru99.customer.Guru99Customer;
 import com.guru99.loginpage.Guru99LoginPage;
 
-public class Guru99TestLoginPage 
+public class Guru99TestCreationOfCustomer 
 
 {
 	WebDriver driver;
@@ -30,29 +30,29 @@ public class Guru99TestLoginPage
 	
 	}
 	 
-	@Test(priority = 2, dataProvider="editCustomer")
-	public void Edition_Customer_And_Save(String address, String city,String state, String pin, String phone, String Eml) throws InterruptedException {
-		String Custid = customer.Get_Created_Custmer_Id();
-		System.out.println(Custid);
-		customer.edition_Of_CreatedCustomer_Details(Custid, address, city, state, pin, phone, Eml);
-	}
+//	@Test(priority = 2, dataProvider="editCustomer")
+//	public void Edition_Customer_And_Save(String address, String city,String state, String pin, String phone, String Eml) throws InterruptedException {
+//		String Custid = customer.Get_Created_Custmer_Id();
+//		System.out.println(Custid);
+//		customer.edition_Of_CreatedCustomer_Details(Custid, address, city, state, pin, phone, Eml);
+//	}
 	
 	@DataProvider(name="createCustomer")
     public static Object[][] getDataFromCreateCustomer(){
         return new Object[][] {
            
-            { "mngr167859","mEdameb","sharee","11-11-1998","Thanks for coming here", "California", "USA", "928392", "9887327382", "bshree22@votercircle.in", "Teet123" },
+            { "mngr167859","mEdameb","shabri","11-11-1998","Thanks for coming here", "California", "USA", "928392", "9887327382", "shabree@votercircle.in", "Test123" },
             
         };  
 	  }
 	 
-	  @DataProvider(name="editCustomer")
-	  public static Object[][] getDataFromEditCustomer(){
-		  return new Object[][] {
-			  {"Thanks for coming here well", "Califora", "SSA", "928892", "9887329982", "prakash11@votercircle.in"}
-		  };
-	  }
-	  
+//	  @DataProvider(name="editCustomer")
+//	  public static Object[][] getDataFromEditCustomer(){
+//		  return new Object[][] {
+//			  {"Thanks for coming here well", "Califora", "SSA", "928892", "9887329982", "prakash11@votercircle.in"}
+//		  };
+//	  }
+//	  
 	 
 	  
 }

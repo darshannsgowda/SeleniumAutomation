@@ -68,6 +68,15 @@ public class Guru99Customer extends Guru99ManagerHomePage
 	@FindBy(xpath="//input[@type=\"submit\"]")
 	WebElement EditCustomerSubmitBtn;
 	
+	@FindBy(xpath="//p[contains(text(),'Delete Customer Form')]")
+	WebElement DeleteCustmrTitle;
+	
+	@FindBy(xpath = "//input[@onkeyup=\"validatecustomerid();\"]")
+	WebElement DeleteCustmerField ;
+	
+	@FindBy(xpath ="//input[@name=\"AccSubmit\"]")
+	WebElement DeleteCustSubmtBtn;
+	
 	public Guru99Customer(WebDriver driver) {
 		super(driver);
 		
@@ -140,8 +149,16 @@ public class Guru99Customer extends Guru99ManagerHomePage
 		EditCustomerSubmitBtn.click();
 	}
 	
- 
+	public void delete_CustomerPage_Title() {
+		DeleteCustmrTitle.isDisplayed();
+	}
+	public void enter_Custmer_Id_DeleteCustmrField(String CustId) {
+		DeleteCustmerField.sendKeys(CustId);
+	}
 	
+	public void click_On_DeleteCustomer_SubmtBtn() {
+		DeleteCustSubmtBtn.click();
+	}
 	public void Creation_of_new_customer(String name, String date, String address, String city, String state, String pin, String phone, String Eml, String pwdd) throws Exception{
 		NewCustmer.click();
 		ExpliwaitUntilElementToBeClickable(driver, 10000, createNewCustomerTitle);
@@ -157,7 +174,7 @@ public class Guru99Customer extends Guru99ManagerHomePage
 		Emailfield.sendKeys(Eml);
 		Pwdfield.sendKeys(pwdd);
 		CreateCustomerSubmtBtn.click();
-		ExpliwaitUntilElementToBeClickable(driver, 5000,createNewCustomerTitle );
+		Thread.sleep(3000);
 
 	}
 	
@@ -176,5 +193,19 @@ public class Guru99Customer extends Guru99ManagerHomePage
 		Enter_Phonenumber(phone);
 		Enter_Email(Eml);
 		click_On_EditCustomer_SubmitBtn();
+	}
+	
+	
+	public void deletion_Of_NewlyCreated_Customer(String CustId) {
+		Get_Created_Custmer_Id();
+		Deletion_of_Customer();
+		ExpliwaitUntilElementToBeClickable(driver, 2000,DeleteCustmrTitle);
+		enter_Custmer_Id_DeleteCustmrField(CustId);
+		click_On_DeleteCustomer_SubmtBtn();
+		driver.switchTo().alert().accept();
+		driver.switchTo().alert().accept();
+		Guru99_Welcome_Page_Title();
+		
+		
 	}
 }
