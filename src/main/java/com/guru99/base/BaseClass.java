@@ -12,7 +12,11 @@ public class BaseClass {
 		new WebDriverWait(driver, time).until(ExpectedConditions.elementToBeClickable(element));
 	}
 
-
+//	public void ExpliwaitUntilTextToBePresentInElement(WebDriver driver, long time, WebElement element) {
+//		new WebDriverWait(driver, time).until(ExpectedConditions.textToBePresentInElement(element, null));
+//	}
+//	
+	
 	
 	
 }
