@@ -57,4 +57,15 @@ public class Guru99Account extends Guru99ManagerHomePage
 	public void click_on_AccountSubmtBtn() {
 		NewAccSubmtBtn.click();
 	}
+	
+	
+	
+	public void creation_of_Newaccount(String custid, String value) {
+		addnew_Account_Titlename();
+		enter_Customerid_InAccount_CustomerField(custid);
+		click_on_AccntDropDwn();
+		select_Current_OtnFrom_Dropdwn();
+		enter_Intitial_DepostMoney(value);
+		click_on_AccountSubmtBtn();
+	}
 }
