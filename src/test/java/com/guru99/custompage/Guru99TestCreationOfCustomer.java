@@ -27,6 +27,7 @@ public class Guru99TestCreationOfCustomer
 		Login.Now_LoginToAccount(Usrname,Pwd);
 		customer.Creation_of_new_customer(Custmrname,Dob,addres,city, state,pin, phone, eml, pass);
 		
+		
 	
 	}
 	 
@@ -41,7 +42,7 @@ public class Guru99TestCreationOfCustomer
     public static Object[][] getDataFromCreateCustomer(){
         return new Object[][] {
            
-            { "mngr167859","mEdameb","shabri","11-11-1998","Thanks for coming here", "California", "USA", "928392", "9887327382", "shabree@votercircle.in", "Test123" },
+            { "mngr167859","mEdameb","habri","11-11-1998","Thanks for coming here", "California", "USA", "928392", "9887327382", "habriii@votercircle.in", "Test123" },
             
         };  
 	  }

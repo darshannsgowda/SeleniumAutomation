@@ -4,7 +4,9 @@
   <test thread-count="5" name="Test">
     <classes>
       <class name="com.guru99.homepage.Guru99TestHomePage"/>
-      <class name="com.guru99.newcustompage.Guru99TestLoginPage"/>
+      <class name="com.guru99.custompage.Guru99TestCreationOfCustomer"/>
+      <class name="com.guru99.custompage.Guru99TestEditionOfCustomer"/>
+      <class name="com.guru99.custompage.Guru99TestDeletionOfCustomer"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

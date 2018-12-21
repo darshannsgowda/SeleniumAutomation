@@ -31,14 +31,14 @@ public class Guru99TestEditionOfCustomer
 	@Test(priority = 2, dataProvider="editCustomer")
 	public void Edition_Customer_And_Save(String address, String city,String state, String pin, String phone, String Eml) throws InterruptedException {
 		String Custid = customer.Get_Created_Custmer_Id();
-		customer.edition_Of_CreatedCustomer_Details(Custid, address, city, state, pin, phone, Eml);
+		customer.edition_Of_CreatedCustomer_Details(Custid, address, city, state, pin,phone, Eml);
 	}
 	
 	@DataProvider(name="createCustomer")
     public static Object[][] getDataFromCreateCustomer(){
         return new Object[][] {
            
-            { "mngr167859","mEdameb","ree","11-11-1998","Thanks for coming here", "California", "USA", "928392", "9887327382", "bsee0s0@votercircle.in", "Teet123" },
+            { "mngr167859","mEdameb","ressedss","11-11-1998","Thanks for coming here", "California", "USA", "928392", "9887327382", "bill1001@votercircle.in", "Test123" },
             
         };  
 	  }
@@ -46,7 +46,7 @@ public class Guru99TestEditionOfCustomer
 	  @DataProvider(name="editCustomer")
 	  public static Object[][] getDataFromEditCustomer(){
 		  return new Object[][] {
-			  {"Thankshhfor coming here well", "Caifora", "SSA", "928882", "9887329982", "prakash10@votercircle.in"}
+			  {"Thankshhfor coming here well", "Cifora", "SSA", "928882", "9887329982", "prakash1010@votercircle.in"}
 		  };
 	  }
 	  

@@ -179,19 +179,19 @@ public class Guru99Customer extends Guru99ManagerHomePage
 	}
 	
 	
-	public void edition_Of_CreatedCustomer_Details(String CustId, String address, String city, String state, String pin, String phone, String Eml) {
-	
-		Edition_of_Customer_Details();
+	public void edition_Of_CreatedCustomer_Details(String CustId, String addrss, String cty, String stte, String pn, String phne, String eeml) throws InterruptedException {
 		Get_Created_Custmer_Id();
+		Edition_of_Customer_Details();
+		Thread.sleep(2000);
 		created_Customerid_in_EditCustomerField(CustId);
 		click_On_EditCustomer_SubmitBtn();
 		ExpliwaitUntilElementToBeClickable(driver, 3000, EditCustomerSubmitBtn);
-		Enter_Address(address);
-		Enter_City(city);
-		Enter_state(state);
-		Enter_PinNumber(pin);
-		Enter_Phonenumber(phone);
-		Enter_Email(Eml);
+		Enter_Address(addrss);
+		Enter_City(cty);
+		Enter_state(stte);
+		Enter_PinNumber(pn);
+		Enter_Phonenumber(phne);
+		Enter_Email(eeml);
 		click_On_EditCustomer_SubmitBtn();
 	}
 	
