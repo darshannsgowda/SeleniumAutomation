@@ -4,10 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import com.guru99.customer.Guru99Customer;
-
 import come.guru99.managerhomepage.Guru99ManagerHomePage;
-
 public class Guru99Account extends Guru99ManagerHomePage
 {
 	WebDriver driver;
@@ -30,6 +27,17 @@ public class Guru99Account extends Guru99ManagerHomePage
 	@FindBy(xpath= "//input[@name=\"button2\"]")
 	WebElement NewAccSubmtBtn;
 	
+	@FindBy(xpath = "//tbody[1]/tr[4]/td[2]")
+	WebElement AccountId;
+	
+	@FindBy(xpath ="//input[@name =\"accountno\"]")
+	WebElement Editaccountfield;
+	
+	@FindBy(xpath ="//p[contains(text(),'Edit Account Form')]")
+	WebElement EditacntpageTitle;
+	
+	@FindBy(xpath ="//input[@type=\"submit\"]")
+	WebElement EditAccountPageSubmtBtn;
 
 	
 	public Guru99Account(WebDriver driver) {
@@ -61,15 +69,38 @@ public class Guru99Account extends Guru99ManagerHomePage
 		NewAccSubmtBtn.click();
 	}
 	
+	public String get_AccountId() {
+		String Accid = AccountId.getText();
+		return Accid ;
+	}
+	
+	public void enter_Id_In_EditAccountField(String accid) {
+		Editaccountfield.sendKeys(accid);
+	}
+	
+	public void click_On_EditAccnt_SubmtBtn() {
+		EditAccountPageSubmtBtn.click();
+	}
 	
 	
 	public void creation_of_Newaccount(String custid, String value) {
 		Get_Created_Custmer_Id();
+		Creation_of_NewAccount();
 		addnew_Account_Titlename();
 		enter_Customerid_InAccount_CustomerField(custid);
 		click_on_AccntDropDwn();
 		select_Current_OtnFrom_Dropdwn();
 		enter_Intitial_DepostMoney(value);
 		click_on_AccountSubmtBtn();
+	}
+	
+	public void edition_Of_Account(String accid) 
+	{
+		get_AccountId();
+		Edition_of_Account();
+		ExpliwaitUntilElementToBeClickable(driver, 3000, EditacntpageTitle);
+		enter_Id_In_EditAccountField(accid);
+		click_On_EditAccnt_SubmtBtn();
+		
 	}
 }

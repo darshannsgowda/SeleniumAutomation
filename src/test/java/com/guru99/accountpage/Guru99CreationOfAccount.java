@@ -16,7 +16,7 @@ public class Guru99CreationOfAccount
 	Guru99LoginPage Login;
 	Guru99Account creatnofaccnt;
 	
-	@Test(priority = 1, dataProvider="createCustomer")
+	@Test(priority = 1, dataProvider="createcustomer")
 	public void Creation_of_NewCustomer(String Usrname, String Pwd, String Custmrname, String Dob, String addres, String city,String state, String pin, String phone, String eml, String pass ) throws Exception {
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\darsh\\eclipse-workspace\\SeleniumAutomation\\src\\main\\resources\\browser_drivers\\chromedriver.exe");
 		driver = new ChromeDriver();
@@ -29,20 +29,36 @@ public class Guru99CreationOfAccount
 		
 	}
 	
-	@Test(priority = 2)
-	public void creation_of_NewAccnt() 
+	@Test(priority = 2,dataProvider="createaccount" )
+	public void creation_of_NewAccnt(String value) 
 	{
-		String custid = customer.Get_Created_Custmer_Id();
-		custid.
+		creatnofaccnt = new Guru99Account(driver);
+		String cusid= customer.Get_Created_Custmer_Id();
+		creatnofaccnt.creation_of_Newaccount(cusid, value);
+		String acidd = creatnofaccnt.get_AccountId();
+		System.out.println(acidd);
+		creatnofaccnt.edition_Of_Account(acidd);
+		
+		
 		
 	}
 	
 
-	@DataProvider(name="createCustomer")
+	@DataProvider(name="createcustomer")
     public static Object[][] getDataFromCreateCustomer(){
         return new Object[][] {
            
-            { "mngr167859","mEdameb","Gabriii","11-11-1998","Thanks for coming here", "California", "USA", "928392", "9887327382", "habri123@votercircle.in", "Test123" },
+            { "mngr167859","mEdameb","Kir","11-10-1909","Thank for coming here", "Califonia", "USA", "989392", "9889327382", "rm98@votercircle.in", "Test123" },
+            
+        };  
+	  }
+	
+
+	@DataProvider(name="createaccount")
+    public static Object[][] getDataFromCreateAccount(){
+        return new Object[][] {
+           
+            {"88329"}
             
         };  
 	  }
