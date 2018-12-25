@@ -3,6 +3,9 @@ package com.guru99.account;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+
+import com.guru99.customer.Guru99Customer;
+
 import come.guru99.managerhomepage.Guru99ManagerHomePage;
 
 public class Guru99Account extends Guru99ManagerHomePage
@@ -47,7 +50,7 @@ public class Guru99Account extends Guru99ManagerHomePage
 	}
 	
 	public void select_Current_OtnFrom_Dropdwn() {
-		select_Current_OtnFrom_Dropdwn();
+		SelectCurrentOptFrmDropdwn.click();
 	}
 	
 	public void enter_Intitial_DepostMoney(String value) {
@@ -61,6 +64,7 @@ public class Guru99Account extends Guru99ManagerHomePage
 	
 	
 	public void creation_of_Newaccount(String custid, String value) {
+		Get_Created_Custmer_Id();
 		addnew_Account_Titlename();
 		enter_Customerid_InAccount_CustomerField(custid);
 		click_on_AccntDropDwn();

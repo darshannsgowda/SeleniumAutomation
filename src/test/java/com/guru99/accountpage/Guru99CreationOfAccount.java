@@ -1,20 +1,20 @@
-package com.guru99.custompage;
+package com.guru99.accountpage;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import com.guru99.account.Guru99Account;
 import com.guru99.customer.Guru99Customer;
 import com.guru99.loginpage.Guru99LoginPage;
 
-public class Guru99TestCreationOfCustomer 
-
+public class Guru99CreationOfAccount 
 {
 	WebDriver driver;
 	Guru99Customer customer;
 	Guru99LoginPage Login;
-	
+	Guru99Account creatnofaccnt;
 	
 	@Test(priority = 1, dataProvider="createCustomer")
 	public void Creation_of_NewCustomer(String Usrname, String Pwd, String Custmrname, String Dob, String addres, String city,String state, String pin, String phone, String eml, String pass ) throws Exception {
@@ -27,17 +27,17 @@ public class Guru99TestCreationOfCustomer
 		Login.Now_LoginToAccount(Usrname,Pwd);
 		customer.Creation_of_new_customer(Custmrname,Dob,addres,city, state,pin, phone, eml, pass);
 		
-		
-	
 	}
-	 
-//	@Test(priority = 2, dataProvider="editCustomer")
-//	public void Edition_Customer_And_Save(String address, String city,String state, String pin, String phone, String Eml) throws InterruptedException {
-//		String Custid = customer.Get_Created_Custmer_Id();
-//		System.out.println(Custid);
-//		customer.edition_Of_CreatedCustomer_Details(Custid, address, city, state, pin, phone, Eml);
-//	}
 	
+	@Test(priority = 2)
+	public void creation_of_NewAccnt() 
+	{
+		String custid = customer.Get_Created_Custmer_Id();
+		custid.
+		
+	}
+	
+
 	@DataProvider(name="createCustomer")
     public static Object[][] getDataFromCreateCustomer(){
         return new Object[][] {
@@ -46,14 +46,4 @@ public class Guru99TestCreationOfCustomer
             
         };  
 	  }
-	 
-//	  @DataProvider(name="editCustomer")
-//	  public static Object[][] getDataFromEditCustomer(){
-//		  return new Object[][] {
-//			  {"Thanks for coming here well", "Califora", "SSA", "928892", "9887329982", "prakash11@votercircle.in"}
-//		  };
-//	  }
-//	  
-	 
-	  
 }
