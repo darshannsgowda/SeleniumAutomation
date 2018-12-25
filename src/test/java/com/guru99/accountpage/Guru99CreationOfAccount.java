@@ -30,7 +30,7 @@ public class Guru99CreationOfAccount
 	}
 	
 	@Test(priority = 2,dataProvider="createaccount" )
-	public void creation_of_NewAccnt(String value) 
+	public void creation_of_NewAccnt(String value) throws InterruptedException 
 	{
 		creatnofaccnt = new Guru99Account(driver);
 		String cusid= customer.Get_Created_Custmer_Id();
@@ -48,7 +48,7 @@ public class Guru99CreationOfAccount
     public static Object[][] getDataFromCreateCustomer(){
         return new Object[][] {
            
-            { "mngr167859","mEdameb","Kir","11-10-1909","Thank for coming here", "Califonia", "USA", "989392", "9889327382", "rm98@votercircle.in", "Test123" },
+            { "mngr167859","mEdameb","Karann","11-10-1909","Thank for coming here", "Califonia", "USA", "989392", "9889327382", "ram998@votercircle.in", "Test123" },
             
         };  
 	  }
@@ -58,7 +58,7 @@ public class Guru99CreationOfAccount
     public static Object[][] getDataFromCreateAccount(){
         return new Object[][] {
            
-            {"88329"}
+            {"89329"}
             
         };  
 	  }

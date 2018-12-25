@@ -21,6 +21,9 @@ public class Guru99Account extends Guru99ManagerHomePage
 	@FindBy(xpath ="//select/option[@value=\"Current\"]")
 	WebElement SelectCurrentOptFrmDropdwn;
 	
+	@FindBy(xpath ="//select/option[@value=\"Savings\"]")
+	WebElement SelectSavingsOptFrmDropdwn;
+	
 	@FindBy(xpath= "//input[@name=\"inideposit\"]")
 	WebElement IntialDepost ;
 
@@ -38,6 +41,12 @@ public class Guru99Account extends Guru99ManagerHomePage
 	
 	@FindBy(xpath ="//input[@type=\"submit\"]")
 	WebElement EditAccountPageSubmtBtn;
+	
+//	@FindBy(xpath ="//input[@name=\"txtinitdep\"]")
+//	WebElement EditAccountdetailsBalanceField;
+	
+	@FindBy(xpath ="//input[@onclick =\"return validate();\"]")
+	WebElement EditAccountEntrySubmtBtn;
 
 	
 	public Guru99Account(WebDriver driver) {
@@ -82,7 +91,9 @@ public class Guru99Account extends Guru99ManagerHomePage
 		EditAccountPageSubmtBtn.click();
 	}
 	
-	
+	public void click_On_EditAccntEntry_SubmtBtn() {
+		EditAccountEntrySubmtBtn.click();
+	}
 	public void creation_of_Newaccount(String custid, String value) {
 		Get_Created_Custmer_Id();
 		Creation_of_NewAccount();
@@ -94,13 +105,21 @@ public class Guru99Account extends Guru99ManagerHomePage
 		click_on_AccountSubmtBtn();
 	}
 	
-	public void edition_Of_Account(String accid) 
+	public void edition_Of_Account(String accid) throws InterruptedException 
 	{
 		get_AccountId();
+		Thread.sleep(8);
 		Edition_of_Account();
-		ExpliwaitUntilElementToBeClickable(driver, 3000, EditacntpageTitle);
+//		ExpliwaitUntilElementToBeClickable(driver, 3000, EditacntpageTitle);
 		enter_Id_In_EditAccountField(accid);
 		click_On_EditAccnt_SubmtBtn();
+		click_on_AccntDropDwn();
+		select_Current_OtnFrom_Dropdwn();
+		click_On_EditAccntEntry_SubmtBtn();
+	
+		
+		
+		
 		
 	}
 }
