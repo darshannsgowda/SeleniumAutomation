@@ -41,6 +41,9 @@ public class Guru99DepositWthDrwFundTrnsfr extends Guru99ManagerHomePage
 	@FindBy(css ="input[name=\"AccSubmit\"]")
 	WebElement AmtWthDrwSubmtBtn;
 	
+	@FindBy(xpath="//tbody[1]/tr[6]/td[2]")
+	WebElement WithDrwTransId;
+	
 	
 	public Guru99DepositWthDrwFundTrnsfr(WebDriver driver) {
 		super(driver);
@@ -82,6 +85,12 @@ public class Guru99DepositWthDrwFundTrnsfr extends Guru99ManagerHomePage
 		AmtWthDrwSubmtBtn.click();
 	}
 	
+	public String get_Amt_transcId() 
+	{
+		String transcid = WithDrwTransId.getText();
+		return transcid;
+	}
+	
 	public void deposit_Amt_From_DepositPage(String acno, String amt, String desc) {
 		
 		get_AccountId();
@@ -100,6 +109,7 @@ public class Guru99DepositWthDrwFundTrnsfr extends Guru99ManagerHomePage
 		enter_The_AmtValue_In_AmtWthDrwField(amount);
 		enter_The_DescIn_AmtWthDrwFrmPage(descrp);
 		click_On_AmtWthDrw_SubmtBtn();
+		System.out.println("My transaction id is"+ get_Amt_transcId());
 		
 	}
 	

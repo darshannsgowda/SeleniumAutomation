@@ -56,7 +56,7 @@ public void deposit_Of_MoneyToAccnt( String amt, String desc, String amount, Str
 @DataProvider(name ="deposit")
 public static Object[][] getDataFromDeposit(){
 	return new Object[][] {
-		{"9999", "Thanks for my amount deposited", "999", "Withdrw amount"}
+		{"9009", "Thanks for my amount deposited", "969", "Withdrw amount"}
 	};
 }
 
@@ -64,7 +64,7 @@ public static Object[][] getDataFromDeposit(){
 public static Object[][] getDataFromCreateCustomer(){
     return new Object[][] {
        
-        { "mngr170111","ugemusy","Bli","09-10-1999","Thank fo coming here", "Califonia", "USA", "988992", "9889327992", "bell990@votercircle.in", "Test1239" },
+        { "mngr170110","ApAjutA","rajesh","09-10-1999","Thank fo coming here", "Califonia", "USA", "988992", "9889327992", "bell9900@votercircle.in", "Test1239" },
         
     };  
   }
@@ -75,7 +75,7 @@ public static Object[][] getDataFromCreateCustomer(){
 public static Object[][] getDataFromCreateAccount(){
     return new Object[][] {
        
-        {"3970"}
+        {"3977"}
         
     };  
   }
