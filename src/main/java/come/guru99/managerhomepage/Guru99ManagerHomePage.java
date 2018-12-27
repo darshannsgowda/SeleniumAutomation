@@ -78,7 +78,7 @@ public class Guru99ManagerHomePage extends BaseClass
 		NewCustomerMenuopt.click();
 	}
 	
-
+// Getting the created customer id value
 	public String Get_Created_Custmer_Id() {
 		String CustId =  GetCustomerIdText.getText();
 		return CustId;
@@ -96,6 +96,7 @@ public class Guru99ManagerHomePage extends BaseClass
 		NewAccountMenuopt.click();
 	}
 	
+	//Getting the created account unique id value
 	public String get_AccountId() {
 		String Accid = AccountId.getText();
 		return Accid ;

@@ -3,14 +3,19 @@ package com.guru99.deposit.withdraw.fundtransfer;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
-public class Guru99Deposit 
+
+import come.guru99.managerhomepage.Guru99ManagerHomePage;
+
+public class Guru99Deposit extends Guru99ManagerHomePage
 {
 	WebDriver driver;
 	
 	@FindBy(xpath ="//p[contains(text(),'Amount Deposit Form')]")
 	WebElement DepostPageTitle;
+	
+	@FindBy(xpath ="//input[@name=\"accountno\"]")
+	WebElement DepostPageAccntNofield;
 	
 	@FindBy(xpath ="//input[@name=\"ammount\"]")
 	WebElement AmntField ;
@@ -23,9 +28,15 @@ public class Guru99Deposit
 	
 	
 	public Guru99Deposit(WebDriver driver) {
-		this.driver =  driver;
-		PageFactory.initElements(driver, this);
+		super(driver);
 		
+	}
+	
+	public void depositPage_Title() {
+		DepostPageTitle.isDisplayed();
+	}
+	public void depostPage_AccnumbrField(String acno) {
+		DepostPageAccntNofield.sendKeys(acno);
 	}
 	
 	public void enter_AmntInField(String amt) {
@@ -40,7 +51,12 @@ public class Guru99Deposit
 		DepositSubmtBtn.click();
 	}
 	
-	public void deposit_Amt_From_DepositPage(String amt, String desc) {
+	public void deposit_Amt_From_DepositPage(String acno, String amt, String desc) {
+		
+		get_AccountId();
+		Deposit();
+//		depositPage_Title();
+		depostPage_AccnumbrField(acno);
 		enter_AmntInField(amt);
 		enter_The_DescInField(desc);
 		click_On_SubmtBtn_In_DepostPage();
