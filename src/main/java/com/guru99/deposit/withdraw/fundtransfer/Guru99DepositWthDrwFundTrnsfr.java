@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 
 import come.guru99.managerhomepage.Guru99ManagerHomePage;
 
-public class Guru99Deposit extends Guru99ManagerHomePage
+public class Guru99DepositWthDrwFundTrnsfr extends Guru99ManagerHomePage
 {
 	WebDriver driver;
 	
@@ -27,7 +27,7 @@ public class Guru99Deposit extends Guru99ManagerHomePage
 	WebElement DepositSubmtBtn;
 	
 	
-	public Guru99Deposit(WebDriver driver) {
+	public Guru99DepositWthDrwFundTrnsfr(WebDriver driver) {
 		super(driver);
 		
 	}

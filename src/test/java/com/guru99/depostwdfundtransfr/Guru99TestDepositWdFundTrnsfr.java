@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 import com.guru99.account.Guru99Account;
 import com.guru99.customer.Guru99Customer;
-import com.guru99.deposit.withdraw.fundtransfer.Guru99Deposit;
+import com.guru99.deposit.withdraw.fundtransfer.Guru99DepositWthDrwFundTrnsfr;
 import com.guru99.loginpage.Guru99LoginPage;
 
 public class Guru99TestDepositWdFundTrnsfr 
@@ -15,7 +15,7 @@ public class Guru99TestDepositWdFundTrnsfr
 Guru99Customer customer;
 Guru99LoginPage Login;
 Guru99Account creatnofaccnt;
-Guru99Deposit deposit;
+Guru99DepositWthDrwFundTrnsfr deposit;
 
 @Test(priority = 1, dataProvider="createcustomer")
 public void Creation_of_NewCustomer(String Usrname, String Pwd, String Custmrname, String Dob, String addres, String city,String state, String pin, String phone, String eml, String pass ) throws Exception {
@@ -45,7 +45,7 @@ public void creation_of_NewAccnt(String value) throws InterruptedException
 @Test(priority = 3, dataProvider = "deposit")
 public void deposit_Of_MoneyToAccnt( String amt, String desc) 
 {
-	deposit = new Guru99Deposit(driver);
+	deposit = new Guru99DepositWthDrwFundTrnsfr(driver);
 	String accntno = creatnofaccnt.get_AccountId();
 	deposit.deposit_Amt_From_DepositPage(accntno, amt, desc);
 }
