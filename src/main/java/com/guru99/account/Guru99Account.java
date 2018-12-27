@@ -21,7 +21,7 @@ public class Guru99Account extends Guru99ManagerHomePage
 	@FindBy(xpath ="//select/option[@value=\"Current\"]")
 	WebElement SelectCurrentOptFrmDropdwn;
 	
-	@FindBy(xpath ="//select/option[@value=\"Savings\"]")
+	@FindBy(xpath ="//option[@value = \"Savings\"]")
 	WebElement SelectSavingsOptFrmDropdwn;
 	
 	@FindBy(xpath= "//input[@name=\"inideposit\"]")
@@ -42,8 +42,8 @@ public class Guru99Account extends Guru99ManagerHomePage
 	@FindBy(xpath ="//input[@type=\"submit\"]")
 	WebElement EditAccountPageSubmtBtn;
 	
-//	@FindBy(xpath ="//input[@name=\"txtinitdep\"]")
-//	WebElement EditAccountdetailsBalanceField;
+	@FindBy(xpath ="//select[@name =\"a_type\"]")
+	WebElement TypeOfAccountDropDwnInEditCountryEntryForm;
 	
 	@FindBy(xpath ="//input[@onclick =\"return validate();\"]")
 	WebElement EditAccountEntrySubmtBtn;
@@ -91,6 +91,14 @@ public class Guru99Account extends Guru99ManagerHomePage
 		EditAccountPageSubmtBtn.click();
 	}
 	
+	public void click_On_EntryAccountFormPage_TypeOfAccount_DropDwn() {
+		TypeOfAccountDropDwnInEditCountryEntryForm.click();
+	}
+	
+	public void select_SavingsOpt_From_AccountDropdwn() {
+		SelectSavingsOptFrmDropdwn.click();
+	}
+	
 	public void click_On_EditAccntEntry_SubmtBtn() {
 		EditAccountEntrySubmtBtn.click();
 	}
@@ -113,8 +121,9 @@ public class Guru99Account extends Guru99ManagerHomePage
 //		ExpliwaitUntilElementToBeClickable(driver, 3000, EditacntpageTitle);
 		enter_Id_In_EditAccountField(accid);
 		click_On_EditAccnt_SubmtBtn();
-		click_on_AccntDropDwn();
-		select_Current_OtnFrom_Dropdwn();
+//		select_Current_OtnFrom_Dropdwn();
+		click_On_EntryAccountFormPage_TypeOfAccount_DropDwn();
+		select_SavingsOpt_From_AccountDropdwn();
 		click_On_EditAccntEntry_SubmtBtn();
 	
 		

@@ -19,7 +19,7 @@ public class Guru99TestHomePage
 		driver.manage().window().maximize();
 		driver.get("http://demo.guru99.com/V4/");
 		Loginpage = new Guru99LoginPage(driver);
-		Loginpage.Now_LoginToAccount("mngr167859","mEdameb");
+		Loginpage.Now_LoginToAccount("mngr170111","ugemusy");
 	}
 	
 

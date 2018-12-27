@@ -48,7 +48,7 @@ public class Guru99CreationOfAccount
     public static Object[][] getDataFromCreateCustomer(){
         return new Object[][] {
            
-            { "mngr167859","mEdameb","Karann","11-10-1909","Thank for coming here", "Califonia", "USA", "989392", "9889327382", "ram998@votercircle.in", "Test123" },
+            { "mngr170111","ugemusy","Billmbtmm","09-10-1999","Thank fo coming here", "Califonia", "USA", "988992", "9889327992", "ranla209@votercircle.in", "Test1239" },
             
         };  
 	  }
@@ -58,7 +58,7 @@ public class Guru99CreationOfAccount
     public static Object[][] getDataFromCreateAccount(){
         return new Object[][] {
            
-            {"89329"}
+            {"390"}
             
         };  
 	  }
