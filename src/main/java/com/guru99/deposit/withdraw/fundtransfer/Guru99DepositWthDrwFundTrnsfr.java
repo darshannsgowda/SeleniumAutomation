@@ -29,6 +29,9 @@ public class Guru99DepositWthDrwFundTrnsfr extends Guru99ManagerHomePage
 	@FindBy(xpath ="//p[contains(text(),'Amount Withdrawal Form')]")
 	WebElement WithDrwPageTitle;
 	
+	@FindBy(css ="input[onkeyup=\"validateaccountno();\"]")
+	WebElement WthAccontNumbrField;
+	
 	@FindBy(css = "input[name=\"ammount\"]")
 	WebElement WithDrwAmountField ;
 	
@@ -59,8 +62,24 @@ public class Guru99DepositWthDrwFundTrnsfr extends Guru99ManagerHomePage
 		DescriptionField.sendKeys(desc);
 	}
 	
+	public void enter_AccntNo_In_WthDrwFormPage(String accntid) {
+		WthAccontNumbrField.sendKeys(accntid);
+	}
+	
 	public void click_On_SubmtBtn_In_DepostPage() {
 		DepositSubmtBtn.click();
+	}
+	
+	public void enter_The_AmtValue_In_AmtWthDrwField(String amount) {
+		AmntField.sendKeys(amount);
+	}
+	
+	public void enter_The_DescIn_AmtWthDrwFrmPage(String descrp) {
+		DescriptionField.sendKeys(descrp);
+	}
+	
+	public void click_On_AmtWthDrw_SubmtBtn() {
+		AmtWthDrwSubmtBtn.click();
 	}
 	
 	public void deposit_Amt_From_DepositPage(String acno, String amt, String desc) {
@@ -73,6 +92,18 @@ public class Guru99DepositWthDrwFundTrnsfr extends Guru99ManagerHomePage
 		enter_The_DescInField(desc);
 		click_On_SubmtBtn_In_DepostPage();
 	}
+	
+	public void withdrw_Amt_From_AccountPage(String accntno, String amount, String descrp) {
+//		get_AccountId();
+		WithDraw();
+		enter_AccntNo_In_WthDrwFormPage(accntno);
+		enter_The_AmtValue_In_AmtWthDrwField(amount);
+		enter_The_DescIn_AmtWthDrwFrmPage(descrp);
+		click_On_AmtWthDrw_SubmtBtn();
+		
+	}
+	
+	
 }
 
 

@@ -43,18 +43,20 @@ public void creation_of_NewAccnt(String value) throws InterruptedException
 }
 
 @Test(priority = 3, dataProvider = "deposit")
-public void deposit_Of_MoneyToAccnt( String amt, String desc) 
+public void deposit_Of_MoneyToAccnt( String amt, String desc, String amount, String descrp) 
 {
 	deposit = new Guru99DepositWthDrwFundTrnsfr(driver);
 	String accntno = creatnofaccnt.get_AccountId();
 	deposit.deposit_Amt_From_DepositPage(accntno, amt, desc);
+	deposit.withdrw_Amt_From_AccountPage(accntno, amount, descrp);
+	
 }
 
 
 @DataProvider(name ="deposit")
 public static Object[][] getDataFromDeposit(){
 	return new Object[][] {
-		{"9999", "Thanks for my amount deposited"}
+		{"9999", "Thanks for my amount deposited", "999", "Withdrw amount"}
 	};
 }
 
@@ -62,7 +64,7 @@ public static Object[][] getDataFromDeposit(){
 public static Object[][] getDataFromCreateCustomer(){
     return new Object[][] {
        
-        { "mngr170111","ugemusy","Billbtmm","09-10-1999","Thank fo coming here", "Califonia", "USA", "988992", "9889327992", "ranl919@votercircle.in", "Test1239" },
+        { "mngr170111","ugemusy","Bli","09-10-1999","Thank fo coming here", "Califonia", "USA", "988992", "9889327992", "bell990@votercircle.in", "Test1239" },
         
     };  
   }
@@ -73,7 +75,7 @@ public static Object[][] getDataFromCreateCustomer(){
 public static Object[][] getDataFromCreateAccount(){
     return new Object[][] {
        
-        {"3900"}
+        {"3970"}
         
     };  
   }
