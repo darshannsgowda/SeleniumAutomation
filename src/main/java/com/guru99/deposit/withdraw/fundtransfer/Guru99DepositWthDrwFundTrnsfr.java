@@ -26,6 +26,18 @@ public class Guru99DepositWthDrwFundTrnsfr extends Guru99ManagerHomePage
 	@FindBy(xpath ="//input[@name=\"AccSubmit\"]")
 	WebElement DepositSubmtBtn;
 	
+	@FindBy(xpath ="//p[contains(text(),'Amount Withdrawal Form')]")
+	WebElement WithDrwPageTitle;
+	
+	@FindBy(css = "input[name=\"ammount\"]")
+	WebElement WithDrwAmountField ;
+	
+	@FindBy(css ="input[onkeyup=\"validatedesc();\"]")
+	WebElement WithDrwDescField;
+	
+	@FindBy(css ="input[name=\"AccSubmit\"]")
+	WebElement AmtWthDrwSubmtBtn;
+	
 	
 	public Guru99DepositWthDrwFundTrnsfr(WebDriver driver) {
 		super(driver);
