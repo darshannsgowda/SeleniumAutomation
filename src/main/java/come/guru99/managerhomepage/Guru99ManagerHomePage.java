@@ -17,6 +17,11 @@ public class Guru99ManagerHomePage extends BaseClass
 	@FindBy(xpath ="//a[@href=\"addcustomerpage.php\"]")
 	WebElement NewCustomerMenuopt;
 	
+	//Get custmer id
+	@FindBy(xpath="//tbody[1]/tr[4]/td[2]")
+//	protected
+	WebElement GetCustomerIdText;
+	
 	@FindBy(xpath = "//a[@href=\"EditCustomer.php\"]")
 	public
 	WebElement EditCustomerMenuopt;
@@ -26,6 +31,9 @@ public class Guru99ManagerHomePage extends BaseClass
 	
 	@FindBy(xpath ="//a[@href=\"addAccount.php\"]")
 	WebElement NewAccountMenuopt;
+	
+	@FindBy(xpath = "//tbody[1]/tr[4]/td[2]")
+	WebElement AccountId;
 	
 	@FindBy(xpath ="//a[@href=\"editAccount.php\"]")
 	WebElement EditAccountMenuopt;
@@ -70,6 +78,12 @@ public class Guru99ManagerHomePage extends BaseClass
 		NewCustomerMenuopt.click();
 	}
 	
+
+	public String Get_Created_Custmer_Id() {
+		String CustId =  GetCustomerIdText.getText();
+		return CustId;
+	}
+	
 	public void Edition_of_Customer_Details() {
 		EditCustomerMenuopt.click();
 	}
@@ -80,6 +94,11 @@ public class Guru99ManagerHomePage extends BaseClass
 	
 	public void Creation_of_NewAccount() {
 		NewAccountMenuopt.click();
+	}
+	
+	public String get_AccountId() {
+		String Accid = AccountId.getText();
+		return Accid ;
 	}
 	
 	public void Edition_of_Account() {

@@ -30,8 +30,8 @@ public class Guru99Account extends Guru99ManagerHomePage
 	@FindBy(xpath= "//input[@name=\"button2\"]")
 	WebElement NewAccSubmtBtn;
 	
-	@FindBy(xpath = "//tbody[1]/tr[4]/td[2]")
-	WebElement AccountId;
+//	@FindBy(xpath = "//tbody[1]/tr[4]/td[2]")
+//	WebElement AccountId;
 	
 	@FindBy(xpath ="//input[@name =\"accountno\"]")
 	WebElement Editaccountfield;
@@ -78,10 +78,10 @@ public class Guru99Account extends Guru99ManagerHomePage
 		NewAccSubmtBtn.click();
 	}
 	
-	public String get_AccountId() {
-		String Accid = AccountId.getText();
-		return Accid ;
-	}
+//	public String get_AccountId() {
+//		String Accid = AccountId.getText();
+//		return Accid ;
+//	}
 	
 	public void enter_Id_In_EditAccountField(String accid) {
 		Editaccountfield.sendKeys(accid);

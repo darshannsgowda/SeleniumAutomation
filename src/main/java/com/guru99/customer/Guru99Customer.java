@@ -52,10 +52,10 @@ public class Guru99Customer extends Guru99ManagerHomePage
 	@FindBy(xpath ="//p[contains(text(),'Customer Registered Successfully!!!')]")
 	WebElement CustomerSuccessfullTitle;
 	
-	@FindBy(xpath="//tbody[1]/tr[4]/td[2]")
-	protected
-	WebElement GetCustomerIdText;
-	
+//	@FindBy(xpath="//tbody[1]/tr[4]/td[2]")
+//	protected
+//	WebElement GetCustomerIdText;
+//	
 	@FindBy(xpath ="(//a[@href=\"Managerhomepage.php\"])[2]")
 	WebElement AftrAccntCrtn;
 	
@@ -137,10 +137,10 @@ public class Guru99Customer extends Guru99ManagerHomePage
 		CreateCustomerSubmtBtn.click();
 	}
 	
-	public String Get_Created_Custmer_Id() {
-		String CustId =  GetCustomerIdText.getText();
-		return CustId;
-	}
+//	public String Get_Created_Custmer_Id() {
+//		String CustId =  GetCustomerIdText.getText();
+//		return CustId;
+//	}
 	public void created_Customerid_in_EditCustomerField(String CustId) {
 		EditCustomeridField.sendKeys(CustId);
 	}
