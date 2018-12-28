@@ -1,5 +1,6 @@
 package com.guru99.deposit.withdraw.fundtransfer;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -113,6 +114,25 @@ public class Guru99DepositWthDrwFundTrnsfr extends Guru99ManagerHomePage
 		FundTrnsfrPageTitle.isDisplayed();
 	}
 	
+	public void enter_The_PayersAccnbr(String accntnmbr) {
+		PayersAccnoField.sendKeys(accntnmbr);
+	}
+	
+	public void enter_The_PayeesAccntnumbr(String payeeacntno) {
+		PayeesAccnoField.sendKeys(payeeacntno);
+	}
+	
+	public void enter_the_AmtNeeds_To_Tranfr(String amtt) {
+		FundtrnsfrAmtField.sendKeys(amtt);
+	}
+	
+	public void enter_The_FundTranfsr_Desc(String desc) {
+		FundtrnsfrDescField.sendKeys(desc);
+	}
+	
+	public void click_On_Fundtransfr_SubmtBtn() {
+		FundtrnsfrSubmtBtn.click();
+	}
 	public void deposit_Amt_From_DepositPage(String acno, String amt, String desc) {
 		
 		get_AccountId();
@@ -134,6 +154,19 @@ public class Guru99DepositWthDrwFundTrnsfr extends Guru99ManagerHomePage
 		System.out.println("My transaction id is"+ get_Amt_transcId());
 		
 	}
+	
+	public void fundtranfer_Amt_From_PayeersToPayeesAccnt(String accntnmbr, String payeeacntno, String amtt, String desc)
+	{
+		Fund_Transfer();
+		fundtransfr_PageTitle();
+		enter_The_PayersAccnbr(accntnmbr);
+		enter_The_PayeesAccntnumbr(payeeacntno);
+		enter_the_AmtNeeds_To_Tranfr(amtt);
+		enter_The_FundTranfsr_Desc(desc);
+		click_On_Fundtransfr_SubmtBtn();
+		
+	}
+	
 	
 	
 	

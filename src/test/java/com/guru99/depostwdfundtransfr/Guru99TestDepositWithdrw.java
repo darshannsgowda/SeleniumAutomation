@@ -10,8 +10,9 @@ import com.guru99.customer.Guru99Customer;
 import com.guru99.deposit.withdraw.fundtransfer.Guru99DepositWthDrwFundTrnsfr;
 import com.guru99.loginpage.Guru99LoginPage;
 
-public class Guru99TestDepositWdFundTrnsfr 
-{WebDriver driver;
+public class Guru99TestDepositWithdrw 
+{
+	WebDriver driver;
 Guru99Customer customer;
 Guru99LoginPage Login;
 Guru99Account creatnofaccnt;
