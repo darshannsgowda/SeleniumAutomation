@@ -1,6 +1,6 @@
 package com.guru99.deposit.withdraw.fundtransfer;
 
-import org.openqa.selenium.Alert;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -62,6 +62,9 @@ public class Guru99DepositWthDrwFundTrnsfr extends Guru99ManagerHomePage
 	
 	@FindBy(css = "input[name=\"AccSubmit\"]")
 	WebElement FundtrnsfrSubmtBtn;
+	
+	@FindBy(xpath ="//p[contains(text(),'Fund Transfer Details')]")
+	WebElement Fundtrnsfrdetails;
 	
 	
 	public Guru99DepositWthDrwFundTrnsfr(WebDriver driver) {
@@ -133,6 +136,10 @@ public class Guru99DepositWthDrwFundTrnsfr extends Guru99ManagerHomePage
 	public void click_On_Fundtransfr_SubmtBtn() {
 		FundtrnsfrSubmtBtn.click();
 	}
+	
+	public void fundtranfer_Details() {
+		Fundtrnsfrdetails.isDisplayed();
+	}
 	public void deposit_Amt_From_DepositPage(String acno, String amt, String desc) {
 		
 		get_AccountId();
@@ -164,7 +171,7 @@ public class Guru99DepositWthDrwFundTrnsfr extends Guru99ManagerHomePage
 		enter_the_AmtNeeds_To_Tranfr(amtt);
 		enter_The_FundTranfsr_Desc(desc);
 		click_On_Fundtransfr_SubmtBtn();
-		
+		fundtranfer_Details();
 	}
 	
 	

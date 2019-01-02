@@ -19,8 +19,8 @@ public class Guru99TestFundTransfer
 	Guru99DepositWthDrwFundTrnsfr fundtrnsfr;
 	
 	
-	@Test(priority = 1, dataProvider="createcustomer")
-	public void Creation_of_NewCustomer(String Usrname, String Pwd, String Custmrname, String Dob, String addres, String city,String state, String pin, String phone, String eml, String pass ) throws Exception {
+	@Test(priority = 1, dataProvider="logintoguru99homepage")
+	public void login_to_Guru99HomePage(String Usrname, String Pwd, String accntnmbr,String payeeacntno, String amtt, String desc ) {
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\darsh\\eclipse-workspace\\SeleniumAutomation\\src\\main\\resources\\browser_drivers\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
@@ -28,57 +28,25 @@ public class Guru99TestFundTransfer
 		Login = new Guru99LoginPage(driver);
 		driver.get("http://demo.guru99.com/V4/");
 		Login.Now_LoginToAccount(Usrname,Pwd);
-		customer.Creation_of_new_customer(Custmrname,Dob,addres,city, state,pin, phone, eml, pass);
-		
-	}
-
-	@Test(invocationCount = 2,priority = 2,dataProvider="createaccount" )
-	public void creation_of_NewAccnt(String value) throws InterruptedException 
-	{
-		creatnofaccnt = new Guru99Account(driver);
-		String cusid= customer.Get_Created_Custmer_Id();
-		creatnofaccnt.creation_of_Newaccount(cusid, value);
-		String acidd = creatnofaccnt.get_AccountId();
-		System.out.println(acidd);
-//		creatnofaccnt.edition_Of_Account(acidd);
-			
 	}
 	
-	@Test(priority =3, dataProvider="fundtranfr")
-	public void fundTransfr_Amount_From_PayeersToPayees_Accnt(String amtt, String desc) {
+	@Test(priority = 2, dataProvider="logintoguru99homepage")
+	public void fundtransfer_From_One_AccntToAnother_Accnt(String Usrname, String Pwd,String accntnmbr,String payeeacntno, String amtt, String desc ) 
+	{
+		
 		fundtrnsfr = new Guru99DepositWthDrwFundTrnsfr(driver);
-		String acid = creatnofaccnt.get_AccountId();
-		String actid = creatnofaccnt.get_AccountId();
-		fundtrnsfr.fundtranfer_Amt_From_PayeersToPayeesAccnt(acid, actid, amtt, desc);
+		fundtrnsfr.fundtranfer_Amt_From_PayeersToPayeesAccnt(accntnmbr, payeeacntno, amtt, desc);
 	}
-	@DataProvider(name ="deposit")
-	public static Object[][] getDataFromDeposit(){
-		return new Object[][] {
-			{"9999", "Thanks for my amount deposited", "959", "Withdrw amount"}
-		};
-	}
-
-	@DataProvider(name="createcustomer")
-	public static Object[][] getDataFromCreateCustomer(){
+	
+	@DataProvider(name = "logintoguru99homepage")
+	public static Object[][] getDataFromFundTrnsfrPage(){
 	    return new Object[][] {
 	       
-	        { "mngr170110","ApAjutA","Jaeiish","10-10-1979","Thank fo coming here", "Califsnia", "USA", "988552", "9989327992", "bel9908@votercircle.in", "Test239" },
+	        { "mngr170110","ApAjutA","54923", "54924", "400", "Thanks for trnsfering the money" }
+	        
 	        
 	    };  
 	  }
 	
-	@DataProvider(name ="fundtranfr")
-	public static Object[][] getDataFromFundtranfr(){
-		return new Object[][] {
-			{"969", "Thanks folks for all your support"}
-		};
-	}
-	@DataProvider(name="createaccount")
-    public static Object[][] getDataFromCreateAccount(){
-        return new Object[][] {
-           
-            {"4800"}
-            
-        };  
-	  }
+	
 }

@@ -35,8 +35,8 @@ public void Creation_of_NewCustomer(String Usrname, String Pwd, String Custmrnam
 public void creation_of_NewAccnt(String value) throws InterruptedException 
 {
 	creatnofaccnt = new Guru99Account(driver);
-	String cusid= customer.Get_Created_Custmer_Id();
-	creatnofaccnt.creation_of_Newaccount(cusid, value);
+	String custid= customer.Get_Created_Custmer_Id();
+	creatnofaccnt.creation_of_Newaccount(custid, value);
 	String acidd = creatnofaccnt.get_AccountId();
 	System.out.println(acidd);
 //	creatnofaccnt.edition_Of_Account(acidd);
@@ -65,7 +65,8 @@ public static Object[][] getDataFromDeposit(){
 public static Object[][] getDataFromCreateCustomer(){
     return new Object[][] {
        
-        { "mngr170110","ApAjutA","rajesh","09-10-1999","Thank fo coming here", "Califonia", "USA", "988992", "9889327992", "bell9900@votercircle.in", "Test1239" },
+        { "mngr170110","ApAjutA","reajesh","09-10-1999","Thank fo coming here", "Califonia", "USA", "988992", "9889327992", "bell99990@votercircle.in", "Test1239" },
+        
         
     };  
   }

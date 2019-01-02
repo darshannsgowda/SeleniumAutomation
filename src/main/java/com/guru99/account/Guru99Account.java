@@ -102,11 +102,12 @@ public class Guru99Account extends Guru99ManagerHomePage
 	public void click_On_EditAccntEntry_SubmtBtn() {
 		EditAccountEntrySubmtBtn.click();
 	}
-	public void creation_of_Newaccount(String custid, String value) {
+	public void creation_of_Newaccount(String custidd ,String value) {
 		Get_Created_Custmer_Id();
 		Creation_of_NewAccount();
 		addnew_Account_Titlename();
-		enter_Customerid_InAccount_CustomerField(custid);
+		enter_Customerid_InAccount_CustomerField(custidd);
+		
 		click_on_AccntDropDwn();
 		select_Current_OtnFrom_Dropdwn();
 		enter_Intitial_DepostMoney(value);
