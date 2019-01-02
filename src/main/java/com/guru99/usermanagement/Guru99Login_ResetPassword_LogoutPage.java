@@ -1,11 +1,11 @@
-package com.guru99.loginpage;
+package com.guru99.usermanagement;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class Guru99LoginPage 
+public class Guru99Login_ResetPassword_LogoutPage 
 {
 	WebDriver driver;
 	@FindBy(xpath = "//input[@type=\"text\"]")
@@ -29,7 +29,7 @@ public class Guru99LoginPage
 	@FindBy(xpath ="//a[@href = \"http://demo.guru99.com/\"]")
 	WebElement GenerateNwAct;
 	
-	public Guru99LoginPage(WebDriver driver) 
+	public Guru99Login_ResetPassword_LogoutPage(WebDriver driver) 
 	{
 		this.driver = driver;
 		PageFactory.initElements(driver, this);

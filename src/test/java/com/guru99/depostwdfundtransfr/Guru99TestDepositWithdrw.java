@@ -8,13 +8,13 @@ import org.testng.annotations.Test;
 import com.guru99.account.Guru99Account;
 import com.guru99.customer.Guru99Customer;
 import com.guru99.deposit.withdraw.fundtransfer.Guru99DepositWthDrwFundTrnsfr;
-import com.guru99.loginpage.Guru99LoginPage;
+import com.guru99.usermanagement.Guru99Login_ResetPassword_LogoutPage;
 
 public class Guru99TestDepositWithdrw 
 {
 	WebDriver driver;
 Guru99Customer customer;
-Guru99LoginPage Login;
+Guru99Login_ResetPassword_LogoutPage Login;
 Guru99Account creatnofaccnt;
 Guru99DepositWthDrwFundTrnsfr deposit;
 
@@ -24,7 +24,7 @@ public void Creation_of_NewCustomer(String Usrname, String Pwd, String Custmrnam
 	driver = new ChromeDriver();
 	driver.manage().window().maximize();
 	customer = new Guru99Customer(driver);
-	Login = new Guru99LoginPage(driver);
+	Login = new Guru99Login_ResetPassword_LogoutPage(driver);
 	driver.get("http://demo.guru99.com/V4/");
 	Login.Now_LoginToAccount(Usrname,Pwd);
 	customer.Creation_of_new_customer(Custmrname,Dob,addres,city, state,pin, phone, eml, pass);

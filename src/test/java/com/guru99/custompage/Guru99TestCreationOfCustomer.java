@@ -6,14 +6,14 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.guru99.customer.Guru99Customer;
-import com.guru99.loginpage.Guru99LoginPage;
+import com.guru99.usermanagement.Guru99Login_ResetPassword_LogoutPage;
 
 public class Guru99TestCreationOfCustomer 
 
 {
 	WebDriver driver;
 	Guru99Customer customer;
-	Guru99LoginPage Login;
+	Guru99Login_ResetPassword_LogoutPage Login;
 	
 	
 	@Test(priority = 1, dataProvider="createCustomer")
@@ -22,7 +22,7 @@ public class Guru99TestCreationOfCustomer
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		customer = new Guru99Customer(driver);
-		Login = new Guru99LoginPage(driver);
+		Login = new Guru99Login_ResetPassword_LogoutPage(driver);
 		driver.get("http://demo.guru99.com/V4/");
 		Login.Now_LoginToAccount(Usrname,Pwd);
 		customer.Creation_of_new_customer(Custmrname,Dob,addres,city, state,pin, phone, eml, pass);
