@@ -1,5 +1,6 @@
 package com.guru99.usermanagement;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -95,14 +96,16 @@ public class Guru99Login_ResetPassword_LogoutPage extends Guru99ManagerHomePage
 		
 	}
 	
-	public void reset_Existing_AccountPasswrd(String oldpass, String newpass,String cnfrmpass ) {
+	public void reset_Existing_AccountPasswrd(String oldpass, String newpass,String cnfrmpass )  {
 		Change_Password();
 		reset_Passwrd_PageTitle();
 		enter_The_OldPasswrd(oldpass);
 		enter_The_NewPasswrd(newpass);
 		confirm_The_EnterdPasswrd(cnfrmpass);
 		click_On_ResetPasswrd_SubmtBtn();
-		
+//		Alert alert = driver.switchTo().alert();
+//        alert.accept();
+//		
 		
 	}
 	
