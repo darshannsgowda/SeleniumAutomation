@@ -3,9 +3,9 @@ package com.guru99.usermanagement;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
+import come.guru99.managerhomepage.Guru99ManagerHomePage;
 
-public class Guru99Login_ResetPassword_LogoutPage 
+public class Guru99Login_ResetPassword_LogoutPage extends Guru99ManagerHomePage
 {
 	WebDriver driver;
 	@FindBy(xpath = "//input[@type=\"text\"]")
@@ -29,10 +29,25 @@ public class Guru99Login_ResetPassword_LogoutPage
 	@FindBy(xpath ="//a[@href = \"http://demo.guru99.com/\"]")
 	WebElement GenerateNwAct;
 	
+	@FindBy(xpath = "//p[contains(text(),\"Change Password\")]")
+	WebElement ResetPasswrdPgetitle;
+	
+	@FindBy(css = "input[name=\"oldpassword\"]")
+	WebElement OldPasswordField;
+	
+	@FindBy(css ="input[name=\"newpassword\"]")
+	WebElement NewPasswordField;
+	
+	@FindBy(css ="input[name=\"confirmpassword\"]")
+	WebElement ConfrmPassField;
+	
+	@FindBy(css = "input[value=\"Submit\"]")
+	WebElement ChangePasswrdPageSubmtBtn;
+	
+	
 	public Guru99Login_ResetPassword_LogoutPage(WebDriver driver) 
 	{
-		this.driver = driver;
-		PageFactory.initElements(driver, this);
+		super(driver);
 	}
 	
 	public void Enter_UserId(String userid) {
@@ -50,6 +65,27 @@ public class Guru99Login_ResetPassword_LogoutPage
 	public void WelocomePage_IsDisplayed() {
 		WelcomePage.isDisplayed();
 	}
+	
+
+	public void reset_Passwrd_PageTitle() {
+		ResetPasswrdPgetitle.isDisplayed();
+	}
+	
+	public void enter_The_OldPasswrd(String oldpass) {
+		OldPasswordField.sendKeys(oldpass);
+	}
+	
+	public void enter_The_NewPasswrd(String newpass) {
+		NewPasswordField.sendKeys(newpass);
+	}
+	
+	public void confirm_The_EnterdPasswrd(String cnfrmpass) {
+		ConfrmPassField.sendKeys(cnfrmpass);
+	}
+	
+	public void click_On_ResetPasswrd_SubmtBtn() {
+		ChangePasswrdPageSubmtBtn.click();
+	}
 	public void Now_LoginToAccount(String userid, String pas) {
 		
 		Enter_UserId(userid);
@@ -57,9 +93,19 @@ public class Guru99Login_ResetPassword_LogoutPage
 		Click_On_Login_Button();
 		WelocomePage_IsDisplayed();
 		
+	}
+	
+	public void reset_Existing_AccountPasswrd(String oldpass, String newpass,String cnfrmpass ) {
+		Change_Password();
+		reset_Passwrd_PageTitle();
+		enter_The_OldPasswrd(oldpass);
+		enter_The_NewPasswrd(newpass);
+		confirm_The_EnterdPasswrd(cnfrmpass);
+		click_On_ResetPasswrd_SubmtBtn();
 		
 		
 	}
+	
 	
 }
 
