@@ -102,9 +102,7 @@ public class Guru99Login_ResetPassword_LogoutPage extends Guru99ManagerHomePage
 		enter_The_NewPasswrd(newpass);
 		confirm_The_EnterdPasswrd(cnfrmpass);
 		click_On_ResetPasswrd_SubmtBtn();
-//		Alert alert = driver.switchTo().alert();
-//        alert.accept();
-//		
+		
 		
 	}
 	
