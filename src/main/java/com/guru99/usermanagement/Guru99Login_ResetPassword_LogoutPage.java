@@ -103,7 +103,6 @@ public class Guru99Login_ResetPassword_LogoutPage extends Guru99ManagerHomePage
 		confirm_The_EnterdPasswrd(cnfrmpass);
 		click_On_ResetPasswrd_SubmtBtn();
 		
-		
 	}
 	
 	
