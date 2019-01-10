@@ -1,0 +1,18 @@
+{
+		"Create Customer data":
+	[
+		{		
+		"UserID" : "mngr170111",
+		"Password": "ugemusy",
+		"Customer Name": "Johnysonn",
+		"Date of Birth": "11-11-1998",
+		"Address": "Thanks for the support",
+		"City": "California",
+		"State": "USA",
+		"PIN": "902933",
+		"Mobile Number": "9838383822",
+		"E-mail": "gte@votercircle.in",
+		"CustPassword": "Test123"
+		}
+	]
+}

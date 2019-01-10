@@ -38,7 +38,7 @@ public class Guru99TestEditionOfCustomer
     public static Object[][] getDataFromCreateCustomer(){
         return new Object[][] {
            
-            { "mngr170111","ugemusy","Jpn","10-11-1908","Thanks for coming here", "California", "USA", "928392", "9887007382", "b090@votercircle.in", "Test123" },
+            { "mngr172590","gApYbUt","ipjn","10-11-1908","Thanks for coming here", "California", "USA", "928392", "9887007382", "bw900@votercircle.in", "Test123" },
             
         };  
 	  }
@@ -46,7 +46,7 @@ public class Guru99TestEditionOfCustomer
 	  @DataProvider(name="editCustomer")
 	  public static Object[][] getDataFromEditCustomer(){
 		  return new Object[][] {
-			  {"Thanks comin here well", "Cifora", "SSA", "920082", "989929982", "prabtha@votercircle.in"}
+			  {"Thanks comin here well", "Cifora", "SSA", "929982", "989929982", "prabhhha@votercircle.in"}
 		  };
 	  }
 	  

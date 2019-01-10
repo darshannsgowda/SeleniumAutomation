@@ -36,9 +36,10 @@ public class Guru99TestCreationOfCustomer
     public static Object[][] getDataFromCreateCustomer(){
         return new Object[][] {
            
-            { "mngr170111","ugemusy","boligger","11-11-1998","Thanks for coming here", "California", "USA", "928392", "9887327382", "hab9113@votercircle.in", "Test123" },
+            { "mngr172590","gApYbUt","bollogger","11-11-1998","Thanks for coming here", "California", "USA", "928392", "9887327382", "hab91100@votercircle.in", "Test123" },
            
         };  
 	  }
+	
 	  
 }
